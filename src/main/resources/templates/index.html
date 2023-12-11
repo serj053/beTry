@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.get("/get-user", function (data) {
+        console.log(data);
+
+        var table =
+          "<table border='1 '>" +
+          "<tr><td>" +
+          data.id +
+          "</td><td>" +
+          data.phone +
+          "</td><td>" +
+          data.name +
+          "</td></ttr>";
+          $('#test_user').html(table);
+      });
+    });
+  </script>
+  <body>
+    <div id="test_user"></div>
+  </body>
+</html>
