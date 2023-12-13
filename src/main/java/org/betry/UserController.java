@@ -1,9 +1,7 @@
 package org.betry;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,5 +17,9 @@ public class UserController {
         userRepository.findAll().forEach(it -> userList.add(it));
             return userList;
         //return List.of(new User(2, "+7-777-77-77", " Tom"));
+    }
+    @PostMapping("/add-user")
+    public void addUser(@RequestBody User user){
+        userRepository.save(user);
     }
 }

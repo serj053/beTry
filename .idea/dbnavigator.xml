@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="882661f5-b56c-4632-9a2d-a2ce7cf6bffb">
-      <console name="Connection" type="STANDARD" schema="test_spring" session="Main" />
+      <console name="Connection" type="STANDARD" schema="test_spring" session="Main"><![CDATA[INSERT INTO user VALUES(5, 990,'Serj'), (6, 505, 'tom'), (7, 7000, 'Lusy');]]></console>
     </connection>
     <connection id="a6601271-130c-444e-80c1-8e5a9b36780d">
       <console name="Connection 1" type="STANDARD" schema="test_spring" session="Main" />
@@ -25,9 +25,18 @@
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="882661f5-b56c-4632-9a2d-a2ce7cf6bffb" dataset="test_spring.user" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
@@ -601,5 +610,8 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
   </component>
 </project>
