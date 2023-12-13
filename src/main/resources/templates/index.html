@@ -5,20 +5,25 @@
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
+  <style>
+    td {
+      padding: 10;
+    }
+  </style>
   <script type="text/javascript">
     $(document).ready(function () {
       $.get("/get-user", function (data) {
         console.log(data);
-        alert(data.length);
-        let table = "<table border='1'>";
+        let table =
+          "<table border='1'><tr><th>ИД</th><th>Телефон</th><th>Имя</th></tr>";
         for (i = 0; i < data.length; i++) {
           table +=
             "<tr><td>" +
-            data[0].id +
+            data[i].id +
             "</td><td>" +
-            data[0].phone +
+            data[i].phone +
             "</td><td>" +
-            data[0].name +
+            data[i].name +
             "</td></tr>";
         }
         table = table + "</table>";
