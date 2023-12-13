@@ -9,17 +9,20 @@
     $(document).ready(function () {
       $.get("/get-user", function (data) {
         console.log(data);
-
-        var table =
-          "<table border='1 '>" +
-          "<tr><td>" +
-          data.id +
-          "</td><td>" +
-          data.phone +
-          "</td><td>" +
-          data.name +
-          "</td></ttr>";
-          $('#test_user').html(table);
+        alert(data.length);
+        let table = "<table border='1'>";
+        for (i = 0; i < data.length; i++) {
+          table +=
+            "<tr><td>" +
+            data[0].id +
+            "</td><td>" +
+            data[0].phone +
+            "</td><td>" +
+            data[0].name +
+            "</td></tr>";
+        }
+        table = table + "</table>";
+        $("#test_user").html(table);
       });
     });
   </script>
