@@ -11,7 +11,7 @@
     }
   </style>
   <script type="text/javascript">
-    $(document).ready(function () {
+    function showUsers() {
       $.get("/get-user", function (data) {
         console.log(data);
         let table =
@@ -29,9 +29,36 @@
         table = table + "</table>";
         $("#test_user").html(table);
       });
+    }
+    $(document).ready(function () {
+      showUsers();
     });
+
+    function send_user() {
+      $.ajax({
+        url:'/add-user',
+        dataType: 'json',
+        type:'POST',
+        cache: false,
+        contentType: 'application/json',
+        data:JSON.stringify({
+          id:$('#user_id').val(),
+          name:$('#user_name').val(),
+          phone:$('#user_phone').val(),
+        }),
+        success:function(){
+          showUsers();
+        }
+      });
+    }
   </script>
   <body>
     <div id="test_user"></div>
+    <form action="">
+      <input type="text" id="user_id" placeholder="ИД" /><br>
+      <input type="text" id="user_name" placeholder="Имя" /><br>
+      <input type="text" id="user_phone" placeholder="Телефон" /><br>
+      <input type="button" value="Сохранить" onclick="send_user()" /><br>
+    </form>
   </body>
 </html>
